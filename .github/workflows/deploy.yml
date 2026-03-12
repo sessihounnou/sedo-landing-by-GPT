@@ -1,0 +1,86 @@
+name: Deploy Landing To Server
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: landing-deploy
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Configure SSH key
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          test -n "${SSH_PRIVATE_KEY:-}"
+          printf '%s\n' "${SSH_PRIVATE_KEY:-}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          grep -Eq "BEGIN (OPENSSH|RSA|EC|DSA) PRIVATE KEY" ~/.ssh/deploy_key
+          ssh-keygen -y -f ~/.ssh/deploy_key >/dev/null
+
+      - name: Ensure deploy directory exists on server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOY_PATH: ${{ secrets.LANDING_DEPLOY_PATH }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -p "${SSH_PORT:-22}" \
+            "$SSH_USER@$SSH_HOST" "mkdir -p '$DEPLOY_PATH'"
+
+      - name: Sync landing files to server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOY_PATH: ${{ secrets.LANDING_DEPLOY_PATH }}
+        run: |
+          test -n "$SSH_HOST"
+          test -n "$SSH_USER"
+          test -n "$DEPLOY_PATH"
+
+          rsync -az --delete \
+            --exclude '.git' \
+            --exclude '.github' \
+            -e "ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -p ${SSH_PORT:-22}" \
+            ./ "$SSH_USER@$SSH_HOST:$DEPLOY_PATH/"
+
+      - name: Build and restart Docker container on server
+        env:
+          SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
+          SSH_USER: ${{ secrets.SSH_USER }}
+          DEPLOY_PATH: ${{ secrets.LANDING_DEPLOY_PATH }}
+          NO_CACHE_BUILD: ${{ secrets.NO_CACHE_BUILD }}
+        run: |
+          ssh -i ~/.ssh/deploy_key -o StrictHostKeyChecking=no -p "${SSH_PORT:-22}" "$SSH_USER@$SSH_HOST" \
+            "DEPLOY_PATH='$DEPLOY_PATH' NO_CACHE_BUILD='${NO_CACHE_BUILD:-false}' bash -s" <<'REMOTE'
+            set -e
+
+            cd "$DEPLOY_PATH"
+            BUILD_FLAGS="--pull"
+            if [ "${NO_CACHE_BUILD}" = "true" ]; then
+              BUILD_FLAGS="--pull --no-cache"
+            fi
+
+            docker compose build ${BUILD_FLAGS}
+
+            if ! docker compose up -d --force-recreate --remove-orphans; then
+              docker compose ps || true
+              docker compose logs --tail=200 || true
+              exit 1
+            fi
+            docker compose ps
+          REMOTE
