@@ -1,0 +1,7 @@
+services:
+  sedo-landing:
+    build: .
+    container_name: sedo-landing
+    restart: unless-stopped
+    ports:
+      - "8081:80"

@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sedo — Livraison rapide et fiable</title>
+  <meta name="description" content="Sedo, la plateforme de livraison à la demande au Bénin. Envoyez vos colis rapidement et en toute sécurité." />
+  <link rel="stylesheet" href="src/styles/reset.css" />
+  <link rel="stylesheet" href="src/styles/variables.css" />
+  <link rel="stylesheet" href="src/styles/main.css" />
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header id="header">
+    <nav class="nav container">
+      <a href="#" class="nav__logo">
+        <img src="public/images/logo-pink.svg" alt="Sedo" style="height:44px;" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="#comment-ca-marche">Comment ça marche</a></li>
+        <li><a href="#avantages">Avantages</a></li>
+        <li><a href="#tarifs">Tarifs</a></li>
+        <li><a href="#devenir-livreur">Devenir livreur</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#telecharger" class="btn btn--primary">Télécharger l'app</a>
+      <button class="nav__burger" aria-label="Menu">&#9776;</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero__content">
+        <div class="hero__text">
+          <h1 class="hero__title">
+            Livrez n'importe quoi,<br />
+            <span class="highlight">en quelques minutes.</span>
+          </h1>
+          <p class="hero__subtitle">
+            Sedo connecte expéditeurs et livreurs en temps réel.
+            Rapide, sécurisé, transparent — suivez votre colis à chaque étape.
+          </p>
+          <p class="hero__store-label">Disponible gratuitement sur</p>
+          <div class="hero__actions">
+            <a href="#" class="btn btn--store btn--lg">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M3.18 23.76c.3.17.65.2.98.08l11.65-6.74-2.5-2.5-10.13 9.16zm-1.18-20.5v17.48c0 .52.29.97.74 1.22l9.73-9.73-9.73-9.73a1.4 1.4 0 0 0-.74 1.76zm19.57 8.1-2.85-1.65-2.82 2.82 2.82 2.82 2.87-1.66c.82-.47.82-1.86-.02-2.33zm-16.72-9.62 10.13 9.16 2.5-2.5-11.65-6.74a1.08 1.08 0 0 0-.98.08z"/></svg>
+              <span><small>Télécharger sur</small><br/>Google Play</span>
+            </a>
+            <a href="#" class="btn btn--store btn--lg">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="white" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <span><small>Télécharger sur</small><br/>App Store</span>
+            </a>
+          </div>
+        </div>
+        <div class="hero__visual">
+          <svg class="hero__mockup" viewBox="0 0 280 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="10" y="10" width="260" height="500" rx="36" fill="#17020B" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+            <rect x="100" y="20" width="80" height="16" rx="8" fill="#0a0106"/>
+            <rect x="20" y="46" width="240" height="444" rx="24" fill="#0f0208"/>
+            <rect x="20" y="46" width="240" height="60" rx="24" fill="#8C034E"/>
+            <rect x="20" y="76" width="240" height="30" fill="#8C034E"/>
+            <text x="140" y="84" text-anchor="middle" fill="white" font-size="14" font-weight="700" font-family="sans-serif">Sedo</text>
+            <rect x="20" y="106" width="240" height="200" fill="#1a1a2e"/>
+            <path d="M20 200 Q100 170 140 190 Q190 215 260 180" stroke="rgba(255,255,255,0.12)" stroke-width="8" stroke-linecap="round"/>
+            <path d="M80 106 Q90 150 100 250" stroke="rgba(255,255,255,0.08)" stroke-width="6" stroke-linecap="round"/>
+            <circle cx="155" cy="172" r="22" fill="#8C034E" opacity="0.2"/>
+            <circle cx="155" cy="172" r="14" fill="#8C034E" opacity="0.9"/>
+            <circle cx="155" cy="172" r="8" fill="white" opacity="0.9"/>
+            <circle cx="155" cy="172" r="4" fill="#8C034E"/>
+            <path d="M105 145 C105 132 115 125 125 125 C135 125 145 132 145 145 C145 158 125 170 125 170 C125 170 105 158 105 145Z" fill="#00D860"/>
+            <circle cx="125" cy="144" r="6" fill="white"/>
+            <rect x="30" y="285" width="220" height="80" rx="14" fill="#1a0410" stroke="#8C034E" stroke-width="1"/>
+            <circle cx="56" cy="310" r="10" fill="#8C034E"/>
+            <text x="76" y="307" fill="white" font-size="9" font-family="sans-serif" font-weight="600">Point de collecte</text>
+            <rect x="76" y="311" width="100" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <line x1="56" y1="320" x2="56" y2="332" stroke="#8C034E" stroke-width="1.5" stroke-dasharray="3,2"/>
+            <circle cx="56" cy="342" r="10" fill="#00D860"/>
+            <text x="76" y="339" fill="white" font-size="9" font-family="sans-serif" font-weight="600">Destination</text>
+            <rect x="76" y="343" width="80" height="4" rx="2" fill="rgba(255,255,255,0.2)"/>
+            <rect x="30" y="376" width="100" height="40" rx="12" fill="#8C034E"/>
+            <text x="80" y="392" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="8" font-family="sans-serif">Prix estimé</text>
+            <text x="80" y="408" text-anchor="middle" fill="white" font-size="13" font-weight="800" font-family="sans-serif">1 500 FCFA</text>
+            <rect x="140" y="376" width="110" height="40" rx="12" fill="white"/>
+            <text x="195" y="401" text-anchor="middle" fill="#8C034E" font-size="11" font-weight="700" font-family="sans-serif">Confirmer</text>
+            <rect x="20" y="430" width="240" height="60" rx="0" fill="#0f0208"/>
+            <rect x="20" y="470" width="240" height="36" rx="24" fill="#0f0208"/>
+            <circle cx="70" cy="453" r="12" fill="rgba(255,255,255,0.06)"/>
+            <circle cx="140" cy="450" r="18" fill="#8C034E"/>
+            <circle cx="210" cy="453" r="12" fill="rgba(255,255,255,0.06)"/>
+            <text x="140" y="456" text-anchor="middle" fill="white" font-size="16" font-family="sans-serif">+</text>
+            <rect x="120" y="488" width="40" height="5" rx="2.5" fill="rgba(255,255,255,0.3)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS BAND -->
+    <section class="stats-band">
+      <div class="container stats-band__grid">
+        <div class="stat">
+          <span class="stat__number">500+</span>
+          <span class="stat__label">Livraisons effectuées</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">50+</span>
+          <span class="stat__label">Livreurs actifs</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">98%</span>
+          <span class="stat__label">Clients satisfaits</span>
+        </div>
+        <div class="stat">
+          <span class="stat__number">&lt; 30 min</span>
+          <span class="stat__label">Délai moyen</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section id="comment-ca-marche" class="how-it-works section">
+      <div class="container">
+        <h2 class="section__title">Comment ça marche ?</h2>
+        <p class="section__subtitle">Trois étapes simples pour envoyer votre colis.</p>
+        <div class="steps">
+          <div class="step">
+            <div class="step__icon">
+              <!-- Formulaire / saisie de course -->
+              <svg viewBox="0 0 48 48" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="7" y="8" width="34" height="32" rx="5" fill="#FDE8F1" stroke="#8C034E" stroke-width="2.5"/>
+                <rect x="7" y="8" width="34" height="11" rx="5" fill="#8C034E"/>
+                <rect x="7" y="15" width="34" height="4" fill="#8C034E"/>
+                <line x1="15" y1="27" x2="33" y2="27" stroke="#8C034E" stroke-width="2.5" stroke-linecap="round"/>
+                <line x1="15" y1="33" x2="26" y2="33" stroke="#8C034E" stroke-width="2.5" stroke-linecap="round"/>
+                <circle cx="15" cy="14" r="2" fill="white"/>
+                <line x1="20" y1="14" x2="30" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="step__title">1. Saisissez votre course</h3>
+            <p class="step__desc">Indiquez le point de collecte, la destination et les informations du destinataire.</p>
+          </div>
+          <div class="step__arrow">→</div>
+          <div class="step">
+            <div class="step__icon">
+              <!-- Livreur à moto -->
+              <svg viewBox="0 0 48 48" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="33" cy="10" r="4.5" fill="#FDE8F1" stroke="#8C034E" stroke-width="2"/>
+                <path d="M29 19 Q25 24 23 30 L36 30 L38 21 Z" fill="#8C034E"/>
+                <ellipse cx="13" cy="35" rx="6" ry="6" fill="none" stroke="#8C034E" stroke-width="2.5"/>
+                <ellipse cx="37" cy="35" rx="6" ry="6" fill="none" stroke="#8C034E" stroke-width="2.5"/>
+                <path d="M9 35 L18 29 L30 29 L41 35" stroke="#8C034E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="21" y="22" width="9" height="7" rx="2" fill="#FDE8F1" stroke="#8C034E" stroke-width="1.5"/>
+                <line x1="25.5" y1="22" x2="25.5" y2="29" stroke="#8C034E" stroke-width="1"/>
+              </svg>
+            </div>
+            <h3 class="step__title">2. Un livreur est assigné</h3>
+            <p class="step__desc">Un coursier disponible près de vous accepte votre demande en quelques secondes.</p>
+          </div>
+          <div class="step__arrow">→</div>
+          <div class="step">
+            <div class="step__icon">
+              <!-- Pin localisation + check -->
+              <svg viewBox="0 0 48 48" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 5C16.82 5 11 10.82 11 18c0 11 13 25 13 25S37 29 37 18C37 10.82 31.18 5 24 5Z" fill="#8C034E"/>
+                <circle cx="24" cy="18" r="6.5" fill="white"/>
+                <path d="M20.5 18.5 L23 21.5 L28 15.5" stroke="#8C034E" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="step__title">3. Suivi en temps réel</h3>
+            <p class="step__desc">Suivez votre livreur sur la carte jusqu'à la livraison confirmée.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- AVANTAGES -->
+    <section id="avantages" class="features section section--alt">
+      <div class="container">
+        <h2 class="section__title">Pourquoi choisir Sedo ?</h2>
+        <div class="features__grid">
+          <div class="feature-card">
+            <div class="feature-card__icon">⚡</div>
+            <h3>Ultra rapide</h3>
+            <p>Livraison en moins de 30 minutes dans la ville de Cotonou et environs.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">📍</div>
+            <h3>Tracking en direct</h3>
+            <p>Suivez votre livreur sur la carte en temps réel, à la minute près.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🔒</div>
+            <h3>Sécurisé</h3>
+            <p>Livreurs vérifiés, paiement transparent et confirmation à chaque étape.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">💬</div>
+            <h3>Chat intégré</h3>
+            <p>Communiquez directement avec votre livreur via le chat de l'application.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">💳</div>
+            <h3>Paiement flexible</h3>
+            <p>Flooz, MoMo ou espèces — le mode de paiement qui vous convient.</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-card__icon">🧾</div>
+            <h3>Prix transparent</h3>
+            <p>Estimation du prix avant confirmation — aucune surprise à la livraison.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- APP SCREENSHOT -->
+    <section class="app-preview section">
+      <div class="container app-preview__inner">
+        <div class="app-preview__screens">
+          <div class="phone-frame phone-frame--back">
+            <img src="public/images/screen-1.png" alt="Écran création course" />
+          </div>
+          <div class="phone-frame phone-frame--front">
+            <img src="public/images/screen-2.png" alt="Écran suivi de course" />
+          </div>
+        </div>
+        <div class="app-preview__text">
+          <span class="app-preview__badge">Application mobile</span>
+          <h2>Une expérience pensée pour la mobilité</h2>
+          <ul class="checklist">
+            <li>Interface simple et intuitive</li>
+            <li>Disponible sur Android et iOS</li>
+            <li>Suivi temps réel avec carte interactive</li>
+            <li>Historique complet de vos courses</li>
+            <li>Chat intégré avec le livreur</li>
+          </ul>
+          <a href="#telecharger" class="btn btn--primary btn--lg">Télécharger gratuitement</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- TARIFS -->
+    <section id="tarifs" class="pricing section section--alt">
+      <div class="container">
+        <h2 class="section__title">Tarifs simples</h2>
+        <p class="section__subtitle">Prix calculés automatiquement selon la distance.</p>
+        <div class="pricing__grid">
+          <div class="pricing-card">
+            <div class="pricing-card__badge">Standard</div>
+            <div class="pricing-card__price">À partir de <strong>500 FCFA</strong></div>
+            <ul class="pricing-card__features">
+              <li>✓ Livraison en ville</li>
+              <li>✓ Suivi en temps réel</li>
+              <li>✓ Chat avec le livreur</li>
+            </ul>
+          </div>
+          <div class="pricing-card pricing-card--featured">
+            <div class="pricing-card__badge">Express</div>
+            <div class="pricing-card__price">Prix selon distance</div>
+            <ul class="pricing-card__features">
+              <li>✓ Livreur dédié</li>
+              <li>✓ Priorité de traitement</li>
+              <li>✓ Suivi en temps réel</li>
+              <li>✓ Chat avec le livreur</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEVENIR LIVREUR -->
+    <section id="devenir-livreur" class="courier-apply section section--alt">
+      <div class="container courier-apply__inner">
+        <div class="courier-apply__text">
+          <span class="app-preview__badge">Rejoignez la flotte</span>
+          <h2>Devenez livreur Sedo</h2>
+          <p>Travaillez à votre rythme, choisissez vos horaires et gagnez votre vie en livrant des colis dans votre ville.</p>
+          <ul class="checklist" style="margin-top:1.5rem;">
+            <li>Liberté totale sur vos horaires</li>
+            <li>Paiement rapide sur votre wallet</li>
+            <li>Application simple et intuitive</li>
+            <li>Support disponible 7j/7</li>
+          </ul>
+        </div>
+
+        <div class="courier-apply__form-wrap">
+          <!-- Étape 1 : pas de compte -->
+          <div id="apply-no-account" class="apply-notice" style="display:none;">
+            <div class="apply-notice__icon">📱</div>
+            <h3>Créez d'abord votre compte</h3>
+            <p>Aucun compte Sedo trouvé pour cet email. Téléchargez l'application, créez votre compte, puis revenez postuler.</p>
+            <div class="hero__actions" style="justify-content:center;margin-top:1.5rem;">
+              <a href="#telecharger" class="btn btn--primary">Télécharger Sedo</a>
+            </div>
+            <button class="apply-back" onclick="showApplyForm()">← Retour</button>
+          </div>
+
+          <!-- Étape 2 : succès -->
+          <div id="apply-success" class="apply-notice" style="display:none;">
+            <div class="apply-notice__icon">✅</div>
+            <h3>Demande envoyée !</h3>
+            <p>Nous avons bien reçu votre candidature. Vous recevrez un email de réponse sous 24–48h.</p>
+          </div>
+
+          <!-- Formulaire principal -->
+          <form id="apply-form" class="apply-form" onsubmit="submitApplication(event)">
+            <h3 class="apply-form__title">Postuler maintenant</h3>
+            <p class="apply-form__subtitle">Vous devez avoir un compte Sedo pour postuler.</p>
+
+            <div class="form-group">
+              <label for="apply-email">Votre email Sedo <span>*</span></label>
+              <input id="apply-email" type="email" placeholder="exemple@email.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="apply-motivation">Pourquoi devrions-nous vous accepter ? <span>*</span></label>
+              <textarea id="apply-motivation" rows="4" placeholder="Décrivez brièvement votre motivation, votre disponibilité, votre moyen de transport... (min. 30 caractères)" required minlength="30"></textarea>
+              <small id="apply-char-count" class="char-count">0 / 30 min.</small>
+            </div>
+
+            <div id="apply-error" class="apply-error" style="display:none;"></div>
+
+            <button type="submit" id="apply-submit" class="btn btn--primary" style="width:100%;justify-content:center;">
+              <span id="apply-btn-text">Envoyer ma candidature</span>
+              <span id="apply-btn-loader" style="display:none;">Envoi en cours...</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- TÉLÉCHARGER -->
+    <section id="telecharger" class="download section">
+      <div class="container download__inner">
+        <h2>Prêt à envoyer votre premier colis ?</h2>
+        <p>Téléchargez Sedo gratuitement et faites votre première livraison en moins de 5 minutes.</p>
+        <div class="download__buttons">
+          <a href="#" class="btn btn--light btn--lg">
+            <img src="public/icons/google-play.svg" alt="" /> Google Play
+          </a>
+          <a href="#" class="btn btn--light btn--lg">
+            <img src="public/icons/apple.svg" alt="" /> App Store
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="contact" class="footer">
+    <div class="container footer__grid">
+      <div class="footer__brand">
+        <img src="public/images/logo-dark.svg" alt="Sedo" class="footer__logo" />
+        <p>La livraison à la demande au Bénin.</p>
+      </div>
+      <div class="footer__links">
+        <h4>Liens</h4>
+        <ul>
+          <li><a href="#comment-ca-marche">Comment ça marche</a></li>
+          <li><a href="#avantages">Avantages</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
+        </ul>
+      </div>
+      <div class="footer__links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="src/pages/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="src/pages/confidentialite.html">Politique de confidentialité</a></li>
+          <li><a href="src/pages/cgv.html">CGV</a></li>
+        </ul>
+      </div>
+      <div class="footer__contact">
+        <h4>Contact</h4>
+        <p>contact@sedo.bj</p>
+        <div class="footer__socials">
+          <a href="#" aria-label="Facebook"><img src="public/icons/facebook.svg" alt="Facebook" /></a>
+          <a href="#" aria-label="Instagram"><img src="public/icons/instagram.png" alt="Instagram" /></a>
+          <a href="#" aria-label="WhatsApp"><img src="public/icons/whatsapp.svg" alt="WhatsApp" /></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom container">
+      <p>&copy; 2026 Sedo. Tous droits réservés.</p>
+    </div>
+  </footer>
+
+  <script src="src/utils/nav.js"></script>
+  <script src="src/utils/apply.js"></script>
+
+</body>
+</html>
