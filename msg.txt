@@ -1,0 +1,12 @@
+Landing — sedo-landing/
+src/pages/suppression-compte.html (nouveau)
+
+Page autonome avec nav + footer Sedo
+Avertissement orange sur l'irréversibilité
+Formulaire : email (requis) + motif (optionnel)
+POST vers API_URL/account-deletion-requests
+Gère erreur ALREADY_PENDING + succès (masque le form)
+src/pages/cgv.html
+
+Article 11 ajouté "Droit à la suppression du compte" avec lien vers suppression-compte.html
+Ancien art. 11 → art. 12, art. 12 Contact → art. 13

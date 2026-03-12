@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Demande de suppression de compte — Sedo</title>
+  <link rel="stylesheet" href="../../src/styles/reset.css" />
+  <link rel="stylesheet" href="../../src/styles/variables.css" />
+  <link rel="stylesheet" href="../../src/styles/main.css" />
+  <style>
+    .del-page { max-width: 560px; margin: 0 auto; }
+    .del-page h1 { font-size: 1.8rem; font-weight: 900; margin-bottom: 0.75rem; color: var(--color-text); }
+    .del-page .subtitle { color: var(--color-text-muted); margin-bottom: 2rem; line-height: 1.7; }
+    .del-card { background: #fff; border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 2rem; box-shadow: var(--shadow-md); }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.2rem; }
+    .form-group label { font-size: 0.875rem; font-weight: 600; color: var(--color-text); }
+    .form-group input, .form-group textarea { border: 1.5px solid var(--color-border); border-radius: var(--radius-md); padding: 0.65rem 0.9rem; font-size: 0.95rem; font-family: var(--font-sans); outline: none; transition: border-color .2s; }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--color-primary); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .del-warning { background: #FFF7ED; border: 1px solid #FED7AA; border-radius: var(--radius-md); padding: 0.9rem 1rem; font-size: 0.85rem; color: #92400E; margin-bottom: 1.5rem; line-height: 1.6; }
+    .del-warning strong { color: #7C2D12; }
+    .del-success, .del-error-box { border-radius: var(--radius-md); padding: 1rem; font-size: 0.9rem; margin-bottom: 1rem; display: none; }
+    .del-success { background: #F0FDF4; border: 1px solid #BBF7D0; color: #166534; }
+    .del-error-box { background: #FEF2F2; border: 1px solid #FECACA; color: #991B1B; }
+    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; color: var(--color-primary); font-weight: 600; margin-bottom: 2rem; font-size: 0.9rem; }
+    .back-link:hover { text-decoration: underline; }
+    .rgpd-note { font-size: 0.78rem; color: var(--color-text-muted); margin-top: 1rem; line-height: 1.6; }
+  </style>
+</head>
+<body>
+  <header id="header">
+    <nav class="nav container">
+      <a href="../../index.html" class="nav__logo">
+        <img src="../../public/images/logo-pink.svg" alt="Sedo" style="height:40px;" />
+      </a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container del-page">
+        <a href="../../index.html" class="back-link">
+          <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+          Retour à l'accueil
+        </a>
+
+        <h1>Suppression de compte</h1>
+        <p class="subtitle">
+          Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi béninoise sur la protection des données personnelles, vous pouvez demander la suppression de votre compte Sedo.<br/><br/>
+          Votre demande sera traitée dans un délai maximum de <strong>30 jours</strong>.
+        </p>
+
+        <div class="del-card">
+          <div class="del-warning">
+            <strong>⚠ Attention — action irréversible.</strong> La suppression entraîne l'anonymisation définitive de vos données personnelles (nom, email, téléphone). Votre historique de courses sera conservé de manière anonyme à des fins légales et comptables.
+          </div>
+
+          <!-- Succès -->
+          <div id="del-success" class="del-success">
+            ✅ Votre demande a bien été enregistrée. Vous recevrez une confirmation une fois votre compte anonymisé (sous 30 jours).
+          </div>
+
+          <!-- Erreur -->
+          <div id="del-error" class="del-error-box"></div>
+
+          <!-- Formulaire -->
+          <form id="del-form" onsubmit="submitDeletion(event)">
+            <div class="form-group">
+              <label for="del-email">Adresse email du compte à supprimer *</label>
+              <input type="email" id="del-email" placeholder="votre@email.com" required />
+            </div>
+            <div class="form-group">
+              <label for="del-reason">Motif de la demande (optionnel)</label>
+              <textarea id="del-reason" placeholder="Expliquez brièvement pourquoi vous souhaitez supprimer votre compte..."></textarea>
+            </div>
+
+            <button type="submit" id="del-submit" class="btn btn--primary" style="width:100%;justify-content:center;">
+              <span id="del-btn-text">Soumettre ma demande</span>
+              <span id="del-btn-loader" style="display:none;">Envoi en cours...</span>
+            </button>
+
+            <p class="rgpd-note">
+              En soumettant ce formulaire, vous confirmez être le titulaire du compte associé à cet email. Sedo — Fifadji, Cotonou, Bénin.
+              Pour toute question : <a href="mailto:contact@sedo.bj" style="color:var(--color-primary)">contact@sedo.bj</a>
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="background:var(--color-primary-dark);color:rgba(255,255,255,0.4);text-align:center;padding:1.5rem;font-size:0.8rem;">
+    © 2025 Sedo — <a href="cgv.html" style="color:inherit">CGV</a> · <a href="confidentialite.html" style="color:inherit">Confidentialité</a> · <a href="mentions-legales.html" style="color:inherit">Mentions légales</a>
+  </footer>
+
+  <script>
+    const API_URL = 'https://api.sedo.bj';
+
+    async function submitDeletion(e) {
+      e.preventDefault();
+      const email = document.getElementById('del-email').value.trim();
+      const reason = document.getElementById('del-reason').value.trim();
+      const btnText = document.getElementById('del-btn-text');
+      const btnLoader = document.getElementById('del-btn-loader');
+      const submitBtn = document.getElementById('del-submit');
+      const errorBox = document.getElementById('del-error');
+      const successBox = document.getElementById('del-success');
+
+      btnText.style.display = 'none';
+      btnLoader.style.display = 'inline';
+      submitBtn.disabled = true;
+      errorBox.style.display = 'none';
+
+      try {
+        const res = await fetch(`${API_URL}/account-deletion-requests`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, reason: reason || undefined }),
+        });
+
+        const data = await res.json();
+
+        if (!res.ok) {
+          errorBox.textContent = data.message || 'Une erreur est survenue.';
+          errorBox.style.display = 'block';
+          return;
+        }
+
+        document.getElementById('del-form').style.display = 'none';
+        successBox.style.display = 'block';
+
+      } catch (err) {
+        errorBox.textContent = 'Impossible de contacter le serveur. Vérifiez votre connexion.';
+        errorBox.style.display = 'block';
+      } finally {
+        btnText.style.display = 'inline';
+        btnLoader.style.display = 'none';
+        submitBtn.disabled = false;
+      }
+    }
+  </script>
+</body>
+</html>
