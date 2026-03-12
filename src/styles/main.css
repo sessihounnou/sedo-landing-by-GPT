@@ -126,6 +126,18 @@
 .btn--store:hover { background: rgba(255,255,255,.22); transform: translateY(-2px); }
 .btn--store span { line-height: 1.3; font-size: 0.95rem; }
 .btn--store small { font-size: 0.65rem; font-weight: 400; opacity: .75; display: block; }
+.btn--store--disabled {
+  opacity: .4;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+.btn--store--disabled:hover { background: rgba(255,255,255,.12); transform: none; }
+.btn--disabled {
+  opacity: .4;
+  cursor: not-allowed;
+  filter: grayscale(1);
+  pointer-events: none;
+}
 .hero__mockup {
   width: 100%;
   max-width: 300px;
